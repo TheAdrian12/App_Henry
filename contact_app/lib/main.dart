@@ -1,3 +1,4 @@
+import 'package:contact_app/Succes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,9 +13,8 @@ class MyApp extends StatelessWidget{
     // TODO: implement build
     return MaterialApp(
       title: 'My app',
-      home: Scaffold(
-        body: Text('HOLA'),
-      ),
+      theme: ThemeData(primaryColor: Colors.blue),
+      home: const Succes1(),
     );
   }
 }
