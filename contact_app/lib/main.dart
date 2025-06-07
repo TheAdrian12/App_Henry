@@ -1,3 +1,4 @@
+import 'package:contact_app/feacture/presentation/home/view/carga_view.dart' show carga;
 import 'package:contact_app/feacture/presentation/home/view/failure_view.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Errorr(),
+      home: carga(),
       );
 
   }
