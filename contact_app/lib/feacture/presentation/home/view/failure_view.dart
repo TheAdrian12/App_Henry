@@ -34,8 +34,8 @@ class Errorr extends StatelessWidget {
               ),
               SizedBox(height: 24),
               ElevatedButton(
-              onPressed: () {
-                // Acción a ejecutar al presionar
+              onPressed: () { 
+                // aqui se pone lo que quieres que haga el boton cuando lo preciones 
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
