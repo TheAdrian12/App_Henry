@@ -1,25 +1,38 @@
 
-import 'package:contact_app/feacture/presentation/home/view/carga_view.dart' show carga;
-import 'package:contact_app/feacture/presentation/home/view/failure_view.dart';
-import 'package:contact_app/Vistas/Succes2.dart';
-import 'package:contact_app/Vistas/Succes3.dart';
-import 'package:contact_app/feacture/presentation/home/view/inicio_view.dart' show Inicio;
+import 'package:contact_app/features/home/Presentation/views/carga_view.dart';
+import 'package:contact_app/features/home/Presentation/views/failure_view.dart';
+import 'package:contact_app/features/home/Presentation/views/Succes_view.dart';
+import 'package:contact_app/features/home/Presentation/views/inicio_view.dart';
 import 'package:flutter/material.dart';
+
+import 'features/home/Presentation/blocs/home_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Errorr(),
-      );
-     
-    ;
-
+    return BlocProvider(
+      create: (context) => HomeBloc(),
+      child: MaterialApp(
+        title: 'contact_app',
+        home: BlocBuilder<HomeBloc, HomeState>(
+          builder: (context, state) {
+            if (state is HomeLoadSuccess) {
+              return Succes3();
+            } else if (state is HomeLoadInProgress) {
+              return carga();
+            } else if (state is HomeLoadFailure) {
+              return Errorr();
+            }
+            return Inicio();
+          },
+        ),
+      ),
+    );
   }
-
 }
-
