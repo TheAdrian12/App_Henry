@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../blocs/home_bloc.dart';
 
 class Inicio extends StatelessWidget {
   const Inicio({super.key});
@@ -37,7 +40,8 @@ class Inicio extends StatelessWidget {
                 // Botón "Iniciar"
                 ElevatedButton(
                   onPressed: () {
-                    // Navegar a otra pantalla
+                  final homeBloc = BlocProvider.of<HomeBloc>(context);
+                  homeBloc.add(HomeSearchPressed());  // Navegar a otra pantalla
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
