@@ -1,4 +1,6 @@
+import 'package:contact_app/features/home/Presentation/blocs/home_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Errorr extends StatelessWidget {
   const Errorr({super.key});
@@ -35,7 +37,8 @@ class Errorr extends StatelessWidget {
               SizedBox(height: 24),
               ElevatedButton(
               onPressed: () { 
-                // aqui se pone lo que quieres que haga el boton cuando lo preciones 
+                final homeBloc = BlocProvider.of<HomeBloc>(context);
+                  homeBloc.add(HomeSearchPressed());
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
