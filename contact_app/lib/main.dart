@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => HomeBloc(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'contact_app',
         home: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {

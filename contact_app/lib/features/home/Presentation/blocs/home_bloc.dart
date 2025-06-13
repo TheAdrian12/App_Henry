@@ -11,7 +11,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       emit(HomeLoadInProgress());
       final url = Uri.parse('https://jsonplaceholder.typicode.com/posts/1');
       final response = await http.get(url);
-      if (response.statusCode == 200){
+      if (response.statusCode == 201){
         emit(HomeLoadSuccess());
       }else{
         emit(HomeLoadFailure());
