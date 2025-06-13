@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
             if (state is HomeLoadSuccess) {
               return Succes3();
             } else if (state is HomeLoadInProgress) {
-              return carga();
+              return Carga();
             } else if (state is HomeLoadFailure) {
               return Errorr();
             }

@@ -36,7 +36,7 @@ class Errorr extends StatelessWidget {
               ),
               SizedBox(height: 24),
               ElevatedButton(
-              onPressed: () { 
+              onPressed: () {
                 final homeBloc = BlocProvider.of<HomeBloc>(context);
                   homeBloc.add(HomeSearchPressed());
               },
