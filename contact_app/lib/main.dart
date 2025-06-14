@@ -5,6 +5,7 @@ import 'package:contact_app/features/home/Presentation/views/Succes_view.dart';
 import 'package:contact_app/features/home/Presentation/views/inicio_view.dart';
 import 'package:flutter/material.dart';
 
+import 'features/data/models/user.dart';
 import 'features/home/Presentation/blocs/home_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
         home: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
             if (state is HomeLoadSuccess) {
-              return Succes3();
+              List<User> usuarios = state.usuarios;
+              return Succes3(usuarios:usuarios);
             } else if (state is HomeLoadInProgress) {
               return Carga();
             } else if (state is HomeLoadFailure) {
